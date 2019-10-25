@@ -3,13 +3,12 @@
 namespace App\API\Controller;
 
 use App\API\Repository\CityRepository;
-use App\API\Controller\AbstractController;
 use App\API\Repository\CountryRepository;
+use App\API\Controller\AbstractController;
 
-class HomepageController extends AbstractController
+class CountryController
 {
 
-	private $cityRepository;
 	private $countryRepository;
 
 	public function __construct(CityRepository $cityRepository)
@@ -22,17 +21,7 @@ class HomepageController extends AbstractController
 	{
 		//echo '<pre>';varDump($this->cityRepository->findAll());echo '<pre>';
 		$this->render([
-			'cities' => $this->cityRepository->findAll()
-			
-		]);
-	}
-
-	public function index1(array $uriVars = [])
-	{
-		//echo '<pre>';varDump($this->cityRepository->findAll());echo '<pre>';
-		$this->render([
 			'country' => $this->countryRepository->findAll()
-			
 		]);
 	}
 }
